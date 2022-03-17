@@ -1,6 +1,8 @@
 #ifndef COMMAND_LINE_ARGUMENTS_PARSER_CMDOPTION_H
 #define COMMAND_LINE_ARGUMENTS_PARSER_CMDOPTION_H
 
+#include <string>
+
 class CmdOption {
 public:
     std::string key;

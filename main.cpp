@@ -1,9 +1,4 @@
-#include <iostream>
-#include <list>
-#include <map>
-#include <CmdOption.h>
-#include <OptionNotFoundException.h>
-#include <Parser.h>
+#include "Parser.h"
 
 int main(int argc, char* argv[])
 {

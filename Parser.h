@@ -1,6 +1,16 @@
 #ifndef COMMAND_LINE_ARGUMENTS_PARSER_PARSER_H
 #define COMMAND_LINE_ARGUMENTS_PARSER_PARSER_H
 
+#include <algorithm>
+#include <exception>
+#include <iostream>
+#include <vector>
+#include <list>
+#include <map>
+#include "Parser.h"
+#include "CmdOption.h"
+#include "OptionNotFoundException.h"
+
 class Parser {
 private:
     std::vector <std::string> tokens;

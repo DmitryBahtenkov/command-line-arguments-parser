@@ -1,16 +1,12 @@
-#include <algorithm>
-#include <exception>
-#include <vector>
-#include <map>
 #include "Parser.h"
 
 Parser::Parser(int &argc, char **argv) {
     for (int i = 1; i < argc; ++i) {
-        this->tokens.push_back(std::string(argv[i]));
+        this->tokens.emplace_back(std::string(argv[i]));
     }
 }
 
-void Parser::initOptions(int options) {
+void Parser::initOptions(std::list<CmdOption> options) {
     this->options = options;
 }
 
@@ -22,7 +18,7 @@ void Parser::getConsoleHelp() {
     }
 }
 
-const int &Parser::getCmdOption(const int &option) const {
+const std::string& Parser::getCmdOption(const std::string &option) const {
     std::vector<std::string>::const_iterator itr;
     itr = std::find(this->tokens.begin(), this->tokens.end(), option);
 
@@ -33,12 +29,12 @@ const int &Parser::getCmdOption(const int &option) const {
     return empty_string;
 }
 
-const bool Parser::cmdOptionExists(const int &option) const {
+const bool Parser::cmdOptionExists(const std::string &option) const {
     return std::find(this->tokens.begin(), this->tokens.end(), option)
            != this->tokens.end();
 }
 
-const int Parser::getAllParameters() const {
+const std::map<std::string, std::string> Parser::getAllParameters() const {
     std::map<std::string, std::string> map = std::map<std::string, std::string>();
 
     for (auto iter : options) {
