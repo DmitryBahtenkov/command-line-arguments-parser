@@ -1,7 +1,6 @@
 #ifndef COMMAND_LINE_ARGUMENTS_PARSER_PARSER_H
 #define COMMAND_LINE_ARGUMENTS_PARSER_PARSER_H
 
-
 class Parser {
 private:
     std::vector <std::string> tokens;
@@ -15,6 +14,5 @@ public:
     const bool cmdOptionExists(const std::string& option) const;
     const std::map<std::string, std::string> getAllParameters() const;
 };
-
 
 #endif //COMMAND_LINE_ARGUMENTS_PARSER_PARSER_H
